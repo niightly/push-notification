@@ -2,7 +2,7 @@ module.exports = (params, module) => {
 	if (!module && (!params.hasOwnProperty('ios') && !params.hasOwnProperty('android'))) {
 		throw new Error("INVALID_PARAMS")
 	}
-	let tmpParams = (params[module] || params)
+	let tmpParams = (module) ? (params[module] || params) : params
 	switch (module) {
 		case 'ios': return new require('./ios/')(tmpParams)
 		case 'android': return new require('./android/')(tmpParams)
