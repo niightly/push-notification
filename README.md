@@ -27,4 +27,4 @@ Since there is multiple ways to use this module, please head the proper document
 ## Authors
 
 * **Adriano** - *Initial Work* ![adrianopaladini](https://github.com/adrianopaladini)
-* **Night** - *Review and Improvments* ![niightly](https://github.com/niightly)
+* **Night** - *Review and Improvements* ![niightly](https://github.com/niightly)
