@@ -1,4 +1,4 @@
-# IBM Push Notification (Hybrid [iOS and Android])
+# IBM Push Notification
 
 This module will allow you to send push notification to iOS and Android devices without depending from other stuff.
 
@@ -20,9 +20,9 @@ Since this module communicate with other server it will install the module below
 ## Parameters and Usage
 Since there is multiple ways to use this module, please head the proper documentation for each type of utilization:
 
-* iOS
-* Android
-* Hybrid
+* ![iOS](https://github.com/niightly/push-notification/tree/master/ios)
+* ![Android](https://github.com/niightly/push-notification/tree/master/android)
+* ![Hybrid](https://github.com/niightly/push-notification/tree/master/hybrid)
 
 ## Authors
 
