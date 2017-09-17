@@ -28,7 +28,7 @@ Here follow the params used on the client initialization
 | android    | Object  | True             | Holds the initilization parameters used on ![Android](https://github.com/niightly/push-notification/tree/master/android#create-the-client)
 
 #### Notification
-The notification parameters will be the same defined on iOS / Android individually. Please read the documentation for both:
+The notification parameters will be the same defined on iOS / Android individually (but since iOS has more parameters than android, consider used iOS model):
 
 * ![iOS](https://github.com/niightly/push-notification/tree/master/ios#send-the-push-notification)
 * ![Android](https://github.com/niightly/push-notification/tree/master/android#send-the-push-notification)
