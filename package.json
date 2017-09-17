@@ -1,6 +1,6 @@
 {
   "name": "ibm-push-notification",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "create a remote notification payload and sends it to Android / iOS servers",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.ibm.com/breaking-bug/push"
+    "url": "https://github.com/niightly/push-notification"
   },
   "keywords": [
     "push",
