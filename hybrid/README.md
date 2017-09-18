@@ -74,9 +74,8 @@ const PushNotification = require('ibm-push-notification')({ ios, android })
 async function sendNotification(message) {
     try {    
         return await PushNotification.send({
-            notification: message,
-            to: <DEVICE_ID>  
-        })
+            notification: message
+        }, { ios: <DEVICE_ID>, android: <DEVICE_ID> })
     } catch (err) {
         throw err
     }
@@ -101,9 +100,8 @@ async function sendNotification(message) {
             aps: { badge:3, sound:"bingbong.aiff" },
             notification: { title: "Foo", body: "Bar" },
             priority: 5,
-            expiration: 0,
-            to: <DEVICE_ID>
-        })
+            expiration: 0
+        }, { ios: <DEVICE_ID>, android: <DEVICE_ID> })
     } catch (err) {
         throw err
     }
@@ -128,9 +126,8 @@ const PushNotification = require('ibm-push-notification')({ ios, android })
 async function sendNotification(message) {
     try {    
         return await PushNotification.send({
-            notification: message,
-            to: [<DEVICE_ID_1>, <DEVICE_ID_2>]
-        })
+            notification: message
+        }, { ios: [<DEVICE_ID_1>, <DEVICE_ID_2>], android: [<DEVICE_ID_3>, <DEVICE_ID_4>] })
     } catch (err) {
         throw err
     }
@@ -155,9 +152,8 @@ async function sendNotification(message) {
             aps: { badge:3, sound:"bingbong.aiff" },
             notification: { title: "Foo", body: "Bar" },
             priority: 5,
-            expiration: 0,
-            to: [<DEVICE_ID_1>, <DEVICE_ID_2>]
-        })
+            expiration: 0
+        }, { ios: [<DEVICE_ID_1>, <DEVICE_ID_2>], android: [<DEVICE_ID_3>, <DEVICE_ID_4>] })
     } catch (err) {
         throw err
     }

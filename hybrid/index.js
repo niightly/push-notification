@@ -1,15 +1,32 @@
 class BothDevices {
 	constructor(iosOptions = {}, androidOptions) {
-		this.APNS = require('./apns')(iosOptions)
-		this.FCM  = require('./fcm')(androidOptions)
+		this.ios     = require('../ios/')(iosOptions)
+		this.android = require('../android/')(androidOptions)
 	}
 
-	async send(notifications) {
+	async send(notifications, devices) {
 		try {
-			return await _objectPromiseAll({
-				ios: this.APNS.send(notifications),
-				android: this.FCM.send(notifications)
-			})
+			let promises = {}
+
+			prepareNotification(promises, 'ios', notifications, devices)
+			prepareNotification(promises, 'android', notifications, devices)
+
+			if (Object.keys(promises).length == 0) { throw new Error("MISSING_DEVICE_TOKENS") }
+			
+			return await _objectPromiseAll(promises)
+		} catch (err) {
+			throw err
+		}
+	}
+
+	async prepareNotification(promises, type, notifications, devices) {
+		try {
+			if (devices.hasOwnProperty(type)) {
+				let tmpPush    = JSON.parse(JSON.stringify(notifications))
+
+				tmpPush.to     = devices[type] 
+				promises[type] = this[type].send(tmpPush)
+			}
 		} catch (err) {
 			throw err
 		}
