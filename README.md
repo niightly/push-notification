@@ -1,4 +1,4 @@
-# IBM Push Notification
+# IBM Push Notification [WIP]
 
 This module will allow you to send push notification to iOS and Android devices without depending from other stuff.
 

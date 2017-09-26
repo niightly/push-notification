@@ -26,8 +26,8 @@ class APNS {
             let params = {
                 method:     'POST',
                 host:       (this.production) ? 'api.push.apple.com' : 'api.development.push.apple.com',
-                port:       443
-                path:       '/3/device/'
+                port:       443,
+                path:       '/3/device/',
                 key:        (this.key) ? this.key : undefined,
                 cert:       (this.cert) ? this.cert : undefined,
                 pfx:        (this.p12) ? this.p12 : undefined,
@@ -65,8 +65,10 @@ class APNS {
     }
     _prepareParams(params, notification) {
         params.path += notification.to
-        params.headers['apns-priority']:   (notification.priority) ? notification.priority : undefined
-        params.headers['apns-expiration']: (notification.expiration) ? notification.expiration : undefined      
+        params.headers = {
+            'apns-priority': (notification.priority) ? notification.priority : undefined,
+            'apns-expiration': (notification.expiration) ? notification.expiration : undefined
+        }
 
         return params
     }

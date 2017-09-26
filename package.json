@@ -1,6 +1,6 @@
 {
   "name": "ibm-push-notification",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "create a remote notification payload and sends it to Android / iOS servers",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   "author": "adpalad@br.ibm.com",
   "license": "MIT",
   "dependencies": {
-    "request": "2.81.0"
+    "request": "2.81.0",
+    "http2": "3.3.7"
   }
 }
