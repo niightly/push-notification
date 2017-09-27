@@ -47,6 +47,7 @@ async function _sendPushNotification(notifications, options) {
 
 		return notifications.map(notification => _buildRequest(params, notifications))
 	} catch (err) {
+		console.log(err)
 		throw err
 	}
 }
@@ -112,21 +113,26 @@ async function _buildRequest(params, notifications) {
 
 async function _post(body, params, notification) {
 	return new Promise((resolve, reject) => {
-		const req = http2.request(params, res => {
-			const data = []
+		try {
+			const req = http2.request(params, function(res) {
+				const data = []
 
-			res.on('data', (chunks) => data.push(chunks.toString('utf8')))
-			res.on('end', () => {
-				res.body = data.join('')
-				resolve({
-					status: res.statusCode,
-					body: (res.body != '') ? res.body : undefined
+				res.on('data', function(chunks) { return data.push(chunks.toString('utf8')) })
+				res.on('end', () => {
+					res.body = data.join('')
+					resolve({
+						status: res.statusCode,
+						body: (res.body != '') ? res.body : undefined
+					})
 				})
 			})
-		})
-		req.on('error', (err) => reject(err))
-		req.write(JSON.stringify(body))
-		req.end();
+			req.on('error', function(err) { reject(err) })
+			req.write(JSON.stringify(body))
+			req.end();
+		} catch (err) {
+			console.log(err)
+			reject(err)
+		}
 	})
 }
 
