@@ -1,4 +1,4 @@
-# IBM Push Notification (iOS Only)
+# IBM Push Notification (iOS Only) [WiP]
 
 This module will allow you to send push notification to iOS devices without depending from other stuff.
 
@@ -48,26 +48,26 @@ Here is an example for iOS usage only
 #### Create the client
 Below you can see several different ways to create your push client
 
-###### Using *.p12 with password
+###### Using .p12 with password
 ```javascript
-const PushNotification = require('ibm-push-notification')({
+const PushNotification = require('ibm-push-notification/ios')({
     p12: '/path/to/Certificate.p12',
     password: 'test',
     bundle: 'com.yourapp.bundle'
-}, 'ios')
+})
 ```
 
 ###### Using openssl certificates with password
 ```javascript
-const PushNotification = require('ibm-push-notification')({
+const PushNotification = require('ibm-push-notification/ios')({
     cert: '/path/to/cert.pem',
     key: '/path/to/key.pem',
     bundle: 'com.yourapp.bundle'
-}, 'ios')
+})
 ```
 
 ##### Tips
-To convert the p12 into *.pem files and avoid to put the key on the code / server
+To convert the p12 into .pem files and avoid to put the key on the code / server
 
 ```shell
 # To create just the certificate
@@ -89,11 +89,11 @@ Here is an example about how to send the notification to one device only
 
 ###### Only Mandatory Params
 ```javascript
-const PushNotification = require('ibm-push-notification')({
+const PushNotification = require('ibm-push-notification/ios')({
     cert: '/path/to/cert.pem',
     key: '/path/to/cert.pem',
     bundle: 'com.yourapp.bundle'
-}, 'ios')
+})
 
 async function sendNotification(message) {
     try {    
@@ -109,11 +109,11 @@ async function sendNotification(message) {
 
 ###### Custom Properties
 ```javascript
-const PushNotification = require('ibm-push-notification')({
+const PushNotification = require('ibm-push-notification/ios')({
     cert: '/path/to/cert.pem',
     key: '/path/to/cert.pem',
     bundle: 'com.yourapp.bundle'
-}, 'ios')
+})
 
 async function sendNotification(message) {
     try {    
@@ -135,11 +135,11 @@ Here is an example about how to send the notification to multiple devices (same 
 
 ###### Only Mandatory Params
 ```javascript
-const PushNotification = require('ibm-push-notification')({
+const PushNotification = require('ibm-push-notification/ios')({
     cert: '/path/to/cert.pem',
     key: '/path/to/cert.pem',
     bundle: 'com.yourapp.bundle'
-}, 'ios')
+})
 
 async function sendNotification(message) {
     try {    
@@ -155,11 +155,11 @@ async function sendNotification(message) {
 
 ###### Custom Properties
 ```javascript
-const PushNotification = require('ibm-push-notification')({
+const PushNotification = require('ibm-push-notification/ios')({
     cert: '/path/to/cert.pem',
     key: '/path/to/cert.pem',
     bundle: 'com.yourapp.bundle'
-}, 'ios')
+})
 
 async function sendNotification(message) {
     try {    

@@ -1,4 +1,4 @@
-# IBM Push Notification (Android Only)
+# IBM Push Notification (Android Only) [WiP]
 
 This module will allow you to send push notification to Android devices without depending from other stuff.
 
@@ -43,9 +43,9 @@ Here is an example for iOS usage only
 Below you can see several different ways to create your push client
 
 ```javascript
-const PushNotification = require('ibm-push-notification')({
+const PushNotification = require('ibm-push-notification/android')({
     key: 'here-goes-your-google-client-key'
-}, 'android')
+})
 ```
 
 ### Send the Push Notification
@@ -56,9 +56,9 @@ Here is an example about how to send the notification to one device only
 
 ###### Only Mandatory Params
 ```javascript
-const PushNotification = require('ibm-push-notification')({
+const PushNotification = require('ibm-push-notification/android')({
     key: 'here-goes-your-google-client-key'
-}, 'android')
+})
 
 async function sendNotification(message) {
     try {    
@@ -74,9 +74,9 @@ async function sendNotification(message) {
 
 ###### Custom Properties
 ```javascript
-const PushNotification = require('ibm-push-notification')({
+const PushNotification = require('ibm-push-notification/android')({
     key: 'here-goes-your-google-client-key'
-}, 'android')
+})
 
 async function sendNotification(message) {
     try {    
@@ -97,9 +97,9 @@ Here is an example about how to send the notification to multiple devices (same 
 
 ###### Only Mandatory Params
 ```javascript
-const PushNotification = require('ibm-push-notification')({
+const PushNotification = require('ibm-push-notification/android')({
     key: 'here-goes-your-google-client-key'
-}, 'android')
+})
 
 async function sendNotification(message) {
     try {    
@@ -115,9 +115,9 @@ async function sendNotification(message) {
 
 ###### Custom Properties
 ```javascript
-const PushNotification = require('ibm-push-notification')({
+const PushNotification = require('ibm-push-notification/android')({
     key: 'here-goes-your-google-client-key'
-}, 'android')
+})
 
 async function sendNotification(message) {
     try {    

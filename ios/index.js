@@ -114,4 +114,8 @@ class APNS {
         })
     }
 }
-module.exports = (options) => new APNS(options)
+
+function instantiate(options) {
+    return new APNS(options)
+}
+module.exports = instantiate
