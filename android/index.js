@@ -68,4 +68,8 @@ class FCM {
 		})
 	}
 }
-module.exports = (options) => new FCM(options)
+
+function instantiate(options){
+	return new FCM(options)
+}
+module.exports = instantiate
